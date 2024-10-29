@@ -1,0 +1,28 @@
+---
+- name: Setup production
+  become: yes
+  become_user: root
+  command: wrench setup production {{ saashq_user }} --yes
+  args:
+    chdir: '{{ wrench_path }}'
+
+- name: Setup Sudoers
+  become: yes
+  become_user: root
+  command: wrench setup sudoers {{ saashq_user }}
+  args:
+    chdir: '{{ wrench_path }}'
+
+- name: Set correct permissions on wrench.log
+  file:
+    path: '{{ wrench_path }}/logs/wrench.log'
+    owner: '{{ saashq_user }}'
+    group: '{{ saashq_user }}'
+  become: yes
+  become_user: root
+
+- name: Restart the wrench
+  command: wrench restart
+  args:
+    chdir: '{{ wrench_path }}'
+...

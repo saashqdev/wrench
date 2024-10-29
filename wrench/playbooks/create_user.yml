@@ -1,0 +1,29 @@
+---
+
+  - hosts: localhost
+    become: yes
+    become_user: root
+    tasks:
+    - name: Create user
+      user:
+        name: '{{ saashq_user }}'
+        generate_ssh_key: yes
+
+    - name: Set home folder perms
+      file:
+        path: '{{ user_directory }}'
+        mode: 'o+rx'
+        owner: '{{ saashq_user }}'
+        group: '{{ saashq_user }}'
+        recurse: yes
+
+    - name: Set /tmp/.wrench folder perms
+      file:
+        path: '{{ repo_path }}'
+        owner: '{{ saashq_user }}'
+        group: '{{ saashq_user }}'
+        recurse: yes
+
+    - name: Change default shell to bash
+      shell: "chsh {{ saashq_user }} -s $(which bash)"
+...

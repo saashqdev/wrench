@@ -1,0 +1,29 @@
+---
+  - name: Check if ERPNexus App exists
+    stat: path="{{ wrench_path }}/apps/erpnexus"
+    register: app
+
+  - name: Get the ERPNexus app
+    command: wrench get-app erpnexus {{ erpnexus_repo_url }} --branch {{ erpnexus_branch }}
+    args:
+      creates: "{{ wrench_path }}/apps/erpnexus"
+      chdir: "{{ wrench_path }}"
+    when: not app.stat.exists and not without_erpnexus
+
+  - name: Check whether the site already exists
+    stat: path="{{ wrench_path }}/sites/{{ site }}"
+    register: site_folder
+    when: not without_site
+
+  - name: Create a new site
+    command: "wrench new-site {{ site }} --admin-password '{{ admin_password }}' --mariadb-root-password '{{ mysql_root_password }}'"
+    args:
+      chdir: "{{ wrench_path }}"
+    when: not without_site and not site_folder.stat.exists
+
+  - name: Install ERPNexus to default site
+    command: "wrench --site {{ site }} install-app erpnexus"
+    args:
+      chdir: "{{ wrench_path }}"
+    when: not without_site and not without_erpnexus
+...

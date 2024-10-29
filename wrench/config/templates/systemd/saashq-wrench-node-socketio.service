@@ -1,0 +1,13 @@
+[Unit]
+After={{ wrench_name }}-saashq-web.service
+Description="{{ wrench_name }}-node-socketio"
+PartOf={{ wrench_name }}-web.target
+
+[Service]
+User={{ user }}
+Group={{ user }}
+Restart=always
+ExecStart={{ node }} {{ wrench_dir }}/apps/saashq/socketio.js
+StandardOutput=file:{{ wrench_dir }}/logs/node-socketio.log
+StandardError=file:{{ wrench_dir }}/logs/node-socketio.error.log
+WorkingDirectory={{ wrench_dir }}

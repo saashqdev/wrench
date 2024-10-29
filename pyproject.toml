@@ -1,0 +1,62 @@
+[project]
+name = "saashq-wrench"
+description = "CLI to manage Multi-tenant deployments for Saashq apps"
+readme = "README.md"
+license = "GPL-3.0-only"
+requires-python = ">=3.8"
+authors = [
+    { name = "Saashq Technologies Pvt Ltd", email = "developers@saashq.org" },
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: System :: Installation/Setup",
+]
+dependencies = [
+    "Click>=7.0",
+    "GitPython~=3.1.30",
+    "honcho",
+    "Jinja2~=3.1.3",
+    "python-crontab~=2.6.0",
+    "requests",
+    "semantic-version~=2.10.0",
+    "setuptools>40.9.0",
+    "tomli;python_version<'3.11'",
+]
+dynamic = [
+    "version",
+]
+
+[project.scripts]
+wrench = "wrench.cli:cli"
+
+[project.urls]
+Changelog = "https://github.com/saashqdev/wrench/releases"
+Documentation = "https://saashqframework.com/docs/user/en/wrench"
+Homepage = "https://saashq.org/wrench"
+Source = "https://github.com/saashqdev/wrench"
+
+[build-system]
+requires = [
+    "hatchling>=1.6.0,<=1.21.0",
+]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "wrench/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/wrench"
+]
+
+[tool.hatch.build.targets.wheel]
+include = [
+  "/wrench"
+]

@@ -1,0 +1,25 @@
+---
+- name: Install deps
+  yum:
+    name:
+      - policycoreutils-python
+      - selinux-policy-devel
+    state: present
+  when: ansible_distribution == 'CentOS'
+
+- name: Check enabled SELinux modules
+  shell: semanage module -l
+  register: enabled_modules
+  when: ansible_distribution == 'CentOS'
+
+- name: Copy saashq_selinux policy
+  copy: src=saashq_selinux.te dest=/root/saashq_selinux.te
+  register: dest_saashq_selinux_te
+  when: ansible_distribution == 'CentOS'
+
+- name: Compile saashq_selinux policy
+  shell: "make -f /usr/share/selinux/devel/Makefile saashq_selinux.pp && semodule -i saashq_selinux.pp"
+  args:
+    chdir: /root/
+  when: "ansible_distribution == 'CentOS' and enabled_modules.stdout.find('saashq_selinux') == -1 or dest_saashq_selinux_te.changed"
+...

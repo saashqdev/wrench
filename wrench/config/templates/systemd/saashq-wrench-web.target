@@ -1,0 +1,6 @@
+[Unit]
+After=network.target
+Wants={{ wrench_name }}-saashq-web.service {{ wrench_name }}-node-socketio.service
+
+[Install]
+WantedBy=multi-user.target

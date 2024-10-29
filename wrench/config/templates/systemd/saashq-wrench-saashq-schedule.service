@@ -1,0 +1,12 @@
+[Unit]
+Description="{{ wrench_name }}-saashq-schedule"
+PartOf={{ wrench_name }}-workers.target
+
+[Service]
+User={{ user }}
+Group={{ user }}
+Restart=always
+ExecStart={{ wrench_cmd }} schedule
+StandardOutput=file:{{ wrench_dir }}/logs/schedule.log
+StandardError=file:{{ wrench_dir }}/logs/schedule.error.log
+WorkingDirectory={{ wrench_dir }}

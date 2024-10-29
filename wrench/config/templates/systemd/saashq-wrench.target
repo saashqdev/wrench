@@ -1,0 +1,6 @@
+[Unit]
+After=network.target
+Requires={{ wrench_name }}-web.target {{ wrench_name }}-workers.target {{ wrench_name }}-redis.target
+
+[Install]
+WantedBy=multi-user.target

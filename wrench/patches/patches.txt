@@ -1,0 +1,10 @@
+wrench.patches.v3.deprecate_old_config
+wrench.patches.v3.celery_to_rq
+wrench.patches.v3.redis_bind_ip
+wrench.patches.v4.update_node
+wrench.patches.v4.update_socketio
+wrench.patches.v4.install_yarn #2
+wrench.patches.v5.fix_user_permissions
+wrench.patches.v5.fix_backup_cronjob
+wrench.patches.v5.set_live_reload_config
+wrench.patches.v5.update_archived_sites
