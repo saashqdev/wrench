@@ -10,7 +10,7 @@ authors = [
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
-    "License :: OSI Approved :: MIT",
+    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: MacOS",
     "Operating System :: OS Independent",
@@ -46,7 +46,11 @@ Source = "https://github.com/saashqdev/wrench"
 requires = [
     "hatchling>=1.6.0,<=1.21.0",
 ]
+
 build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
 
 [tool.hatch.version]
 path = "wrench/__init__.py"

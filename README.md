@@ -142,4 +142,4 @@ The intermediate `staging` branch exists to mediate the `wrench.VERSION` conflic
 
 ## License
 
-This repository has been released under the [GNU GPLv3 License](LICENSE).
+This repository has been released under the [MIT](LICENSE).
