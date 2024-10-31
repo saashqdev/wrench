@@ -13,7 +13,7 @@ _wrench_completion() {
         # Saashq is only installed in virtualenv "env" so use appropriate python executable
         COMPREPLY+=( $( COMP_WORDS="wrench saashq "${COMP_WORDS[@]:1} \
                         COMP_CWORD=$(($COMP_CWORD+1)) \
-                        _WRENCH_COMPLETE=complete ../env/bin/python ../apps/shq-framework/saashq/utils/wrench_helper.py ) )
+                        _WRENCH_COMPLETE=complete ../env/bin/python ../apps/saashq/saashq/utils/wrench_helper.py ) )
 
         # If the word before the current cursor position in command typed so far is "--site" then only list sites
         if [ ${COMP_WORDS[COMP_CWORD-1]} == "--site" ]; then

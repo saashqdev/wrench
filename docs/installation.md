@@ -13,7 +13,7 @@ To install the SHQ-Framework/ERPNexus server software, you will need an operatin
 
 ### Manual Install
 
-To manually install shq-framework/erpnexus, you can follow this [this wiki](https://github.com/saashqdev/shq-framework/wiki/The-Hitchhiker%27s-Guide-to-Installing-Shq-Framework-on-Linux) for Linux and [this wiki](https://github.com/saashqdev/shq-framework/wiki/The-Hitchhiker's-Guide-to-Installing-Shq-Framework-on-Mac-OS-X) for MacOS. It gives an excellent explanation about the stack. You can also follow the steps mentioned below:
+To manually install saashq/erpnexus, you can follow this [this wiki](https://github.com/saashqdev/saashq/wiki/The-Hitchhiker%27s-Guide-to-Installing-Shq-Framework-on-Linux) for Linux and [this wiki](https://github.com/saashqdev/saashq/wiki/The-Hitchhiker's-Guide-to-Installing-Shq-Framework-on-Mac-OS-X) for MacOS. It gives an excellent explanation about the stack. You can also follow the steps mentioned below:
 
 #### 1. Install Prerequisites
 <pre>

@@ -42,9 +42,9 @@ You can also run the parts of the wrench selectively.
 
 * Add apps
 
-	The get-app command gets remote saashq apps from a remote git repository and installs them. Example: [erpnexus](https://github.com/saashq/erpnexus)
+	The get-app command gets remote saashq apps from a remote git repository and installs them. Example: [erpnexus](https://github.com/saashqdev/erpnexus)
 
-		wrench get-app erpnexus https://github.com/saashq/erpnexus
+		wrench get-app erpnexus https://github.com/saashqdev/erpnexus
 
 * Install apps
 

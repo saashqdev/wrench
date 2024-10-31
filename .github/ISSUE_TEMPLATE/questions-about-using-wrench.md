@@ -12,7 +12,7 @@ for questions about using the `Saashq Framework`: ~~https://discuss.saashq.org~~
 
 for questions about using `ERPNexus`: https://discuss.erpnexus.com
 
-For documentation issues, use the [Saashq Framework Documentation](https://saashq.org/docs/user/en) or the [developer cheetsheet](https://github.com/saashqdev/shq-framework/wiki/Developer-Cheatsheet)
+For documentation issues, use the [Saashq Framework Documentation](https://saashq.org/docs/user/en) or the [developer cheetsheet](https://github.com/saashqdev/saashq/wiki/Developer-Cheatsheet)
 
 For a slightly outdated yet informative developer guide: https://www.youtube.com/playlist?list=PL3lFfCEoMxvzHtsZHFJ4T3n5yMM3nGJ1W
 

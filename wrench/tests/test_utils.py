@@ -11,7 +11,7 @@ from wrench.utils import is_valid_saashq_branch
 
 class TestUtils(unittest.TestCase):
 	def test_app_utils(self):
-		git_url = "https://github.com/saashqdev/shq-framework"
+		git_url = "https://github.com/saashqdev/saashq"
 		branch = "develop"
 		app = App(name=git_url, branch=branch, wrench=Wrench("."))
 		self.assertTrue(
@@ -31,17 +31,17 @@ class TestUtils(unittest.TestCase):
 	def test_is_valid_saashq_branch(self):
 		with self.assertRaises(InvalidRemoteException):
 			is_valid_saashq_branch(
-				"https://github.com/saashqdev/shq-framework.git", saashq_branch="random-branch"
+				"https://github.com/saashqdev/saashq.git", saashq_branch="random-branch"
 			)
 			is_valid_saashq_branch(
 				"https://github.com/random/random.git", saashq_branch="random-branch"
 			)
 
 		is_valid_saashq_branch(
-			"https://github.com/saashqdev/shq-framework.git", saashq_branch="develop"
+			"https://github.com/saashqdev/saashq.git", saashq_branch="develop"
 		)
 		is_valid_saashq_branch(
-			"https://github.com/saashqdev/shq-framework.git", saashq_branch="v13.29.0"
+			"https://github.com/saashqdev/saashq.git", saashq_branch="v13.29.0"
 		)
 
 	def test_app_states(self):
@@ -100,7 +100,7 @@ class TestUtils(unittest.TestCase):
 		shutil.rmtree(wrench_dir)
 
 	def test_ssh_ports(self):
-		app = App("git@github.com:22:saashq/saashq")
+		app = App("git@github.com:22:saashqdev/saashq")
 		self.assertEqual(
 			(app.use_ssh, app.org, app.repo, app.app_name), (True, "saashq", "saashq", "saashq")
 		)

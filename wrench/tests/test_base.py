@@ -104,7 +104,7 @@ class TestWrenchBase(unittest.TestCase):
 
 		if not os.path.exists(saashq_tmp_path):
 			exec_cmd(
-				f"git clone https://github.com/saashqdev/shq-framework -b {SAASHQ_BRANCH} --depth 1 --origin upstream {saashq_tmp_path}"
+				f"git clone https://github.com/saashqdev/saashq -b {SAASHQ_BRANCH} --depth 1 --origin upstream {saashq_tmp_path}"
 			)
 
 		kwargs.update(
@@ -119,7 +119,7 @@ class TestWrenchBase(unittest.TestCase):
 		if not os.path.exists(os.path.join(self.wrenches_path, wrench_name)):
 			init(wrench_name, **kwargs)
 			exec_cmd(
-				"git remote set-url upstream https://github.com/saashqdev/shq-framework",
+				"git remote set-url upstream https://github.com/saashqdev/saashq",
 				cwd=os.path.join(self.wrenches_path, wrench_name, "apps", "saashq"),
 			)
 

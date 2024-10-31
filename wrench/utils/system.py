@@ -82,7 +82,7 @@ def init(
 
 	# remote apps
 	else:
-		saashq_path = saashq_path or "https://github.com/saashqdev/shq-framework.git"
+		saashq_path = saashq_path or "https://github.com/saashqdev/saashq.git"
 		is_valid_saashq_branch(saashq_path=saashq_path, saashq_branch=saashq_branch)
 		get_app(
 			saashq_path,
@@ -207,7 +207,7 @@ def setup_fonts():
 	if os.path.exists("/etc/fonts_backup"):
 		return
 
-	exec_cmd("git clone https://github.com/saashq/fonts.git", cwd="/tmp")
+	exec_cmd("git clone https://github.com/saashqdev/fonts.git", cwd="/tmp")
 	os.rename("/etc/fonts", "/etc/fonts_backup")
 	os.rename("/usr/share/fonts", "/usr/share/fonts_backup")
 	os.rename(os.path.join(fonts_path, "etc_fonts"), "/etc/fonts")
