@@ -39,7 +39,7 @@
 
 - QA will use staging for testing.
 
-- Deploy staging branch on saashq.io, erpnexus.org, saashq.erpnexus.com. 
+- Deploy staging branch on saashq.org, erpnexus.org, saashq.erpnexus.com. 
 
 - Only regression and security fixes can be cherry-picked into staging
 

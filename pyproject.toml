@@ -2,15 +2,15 @@
 name = "saashq-wrench"
 description = "CLI to manage Multi-tenant deployments for Saashq apps"
 readme = "README.md"
-license = "GPL-3.0-only"
+license = "MIT"
 requires-python = ">=3.8"
 authors = [
-    { name = "Saashq Technologies Pvt Ltd", email = "developers@saashq.io" },
+    { name = "Saashq Technologies Pvt Ltd", email = "developers@saashq.org" },
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Console",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: MacOS",
     "Operating System :: OS Independent",
@@ -39,7 +39,7 @@ wrench = "wrench.cli:cli"
 [project.urls]
 Changelog = "https://github.com/saashqdev/wrench/releases"
 Documentation = "https://saashqframework.com/docs/user/en/wrench"
-Homepage = "https://saashq.io/wrench"
+Homepage = "https://saashq.org/wrench"
 Source = "https://github.com/saashqdev/wrench"
 
 [build-system]

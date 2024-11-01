@@ -1,4 +1,4 @@
-VERSION = "5.0.0-dev"
+VERSION = "5.0.3-dev"
 PROJECT_NAME = "saashq-wrench"
 SAASHQ_VERSION = None
 current_path = None

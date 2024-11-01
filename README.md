@@ -93,7 +93,7 @@ In case the setup fails, the log file is saved under `$HOME/easy-install.log`. Y
 
 ### Manual Installation
 
-Some might want to manually setup a wrench instance locally for development. To quickly get started on installing wrench the hard way, you can follow the guide on [Installing Wrench and the Saashq Framework](https://saashq.io/docs/user/en/installation).
+Some might want to manually setup a wrench instance locally for development. To quickly get started on installing wrench the hard way, you can follow the guide on [Installing Wrench and the Saashq Framework](https://saashq.org/docs/user/en/installation).
 
 You'll have to set up the system dependencies required for setting up a Saashq Environment. Checkout [docs/installation](https://github.com/saashqdev/wrench/blob/develop/docs/installation.md) for more information on this. If you've already set up, install wrench via pip:
 

@@ -492,7 +492,7 @@ def update(
 
 	print(
 		"_" * 80 + "\nWrench: Deployment tool for Saashq and Saashq Applications"
-		" (https://saashq.io/wrench).\nOpen source depends on your contributions, so do"
+		" (https://saashq.org/wrench).\nOpen source depends on your contributions, so do"
 		" give back by submitting bug reports, patches and fixes and be a part of the"
 		" community :)"
 	)
