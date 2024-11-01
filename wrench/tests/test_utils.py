@@ -100,7 +100,7 @@ class TestUtils(unittest.TestCase):
 		shutil.rmtree(wrench_dir)
 
 	def test_ssh_ports(self):
-		app = App("git@github.com:22:saashqdev/saashq")
+		app = App("git@github.com:22:saashq/saashq")
 		self.assertEqual(
 			(app.use_ssh, app.org, app.repo, app.app_name), (True, "saashq", "saashq", "saashq")
 		)

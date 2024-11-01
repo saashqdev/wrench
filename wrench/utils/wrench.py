@@ -392,7 +392,7 @@ This will take significant time to migrate and might break custom apps.""",
 			)
 		else:
 			print(
-				f"""This update will cause a major version change in SHQ-Framework/ERPNexus from {version_upgrade[1]} to {version_upgrade[2]}.
+				f"""This update will cause a major version change in Saashq/ERPNexus from {version_upgrade[1]} to {version_upgrade[2]}.
 This would take significant time to migrate and might break custom apps."""
 			)
 			click.confirm("Do you want to continue?", abort=True)
@@ -492,7 +492,7 @@ def update(
 
 	print(
 		"_" * 80 + "\nWrench: Deployment tool for Saashq and Saashq Applications"
-		" (https://saashq.org/wrench).\nOpen source depends on your contributions, so do"
+		" (https://saashq.io/wrench).\nOpen source depends on your contributions, so do"
 		" give back by submitting bug reports, patches and fixes and be a part of the"
 		" community :)"
 	)

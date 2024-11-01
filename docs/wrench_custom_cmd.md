@@ -14,12 +14,12 @@ saashq-wrench
 |──apps
     |── saashq
     ├── custom_app
-    │   ├── README.md
-    │   ├── custom_app
-    │   │   ├── commands    <------ commands module
-    │   ├── license.txt
-    │   ├── requirements.txt
-    │   └── setup.py
+    │   ├── README.md
+    │   ├── custom_app
+    │   │   ├── commands    <------ commands module
+    │   ├── license.txt
+    │   ├── requirements.txt
+    │   └── setup.py
 ```
 
 The commands module maybe a single file such as `commands.py` or a directory with an `__init__.py` file. For a custom application of name 'flags', example may be given as

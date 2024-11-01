@@ -179,8 +179,8 @@ def setup_prod(project: str, sites, email: str, version: str = None, image = Non
 		# Use custom image
 		if image:
 			for line in fileinput.input(compose_file_name, inplace=True):
-				if "image: saashqdev/erpnexus" in line:
-					line = line.replace("image: saashqdev/erpnexus", f"image: {image}")
+				if "image: saashq/erpnexus" in line:
+					line = line.replace("image: saashq/erpnexus", f"image: {image}")
 				sys.stdout.write(line)
 
 		try:
@@ -317,7 +317,7 @@ def create_site(
 
 
 if __name__ == "__main__":
-	parser = argparse.ArgumentParser(description="Install Shq Framework with Docker")
+	parser = argparse.ArgumentParser(description="Install Saashq with Docker")
 	parser.add_argument(
 		"-p", "--prod", help="Setup Production System", action="store_true"
 	)

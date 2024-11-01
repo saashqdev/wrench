@@ -6,7 +6,7 @@ patch and try again later.
 1. Rename folder `./archived_sites` to `./archived/sites`
 2. Create a symlink `./archived_sites` => `./archived/sites`
 
-Corresponding changes in saashqdev/saashq via https://github.com/saashqdev/saashq/pull/15060
+Corresponding changes in saashq/saashq via https://github.com/saashqdev/saashq/pull/15060
 """
 import os
 from pathlib import Path

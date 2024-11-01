@@ -1,8 +1,99 @@
-Wrench is a command-line utility that helps you to install, update, and manage multiple sites for SHQ-Framework/ERPNexus applications on [*nix systems](https://en.wikipedia.org/wiki/Unix-like) for development and production.
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [Installation](#installation)
+	- [Containerized Installation](#containerized-installation)
+	- [Easy Install Script](#easy-install-script)
+		- [Setup](#setup)
+		- [Arguments](#arguments)
+		- [Troubleshooting](#troubleshooting)
+	- [Manual Installation](#manual-installation)
+- [Basic Usage](#basic-usage)
+- [Custom Wrench Commands](#custom-wrench-commands)
+- [Guides](#guides)
+- [Resources](#resources)
+- [Development](#development)
+- [Releases](#releases)
+- [License](#license)
+
+
+## Installation
+
+A typical wrench setup provides two types of environments &mdash; Development and Production.
+
+The setup for each of these installations can be achieved in multiple ways:
+
+ - [Containerized Installation](#containerized-installation)
+ - [Manual Installation](#manual-installation)
+
+We recommend using Docker Installation to setup a Production Environment. For Development, you may choose either of the two methods to setup an instance.
+
+Otherwise, if you are looking to evaluate Saashq apps without hassle of hosting, you can try them [on saashqcloud.com](https://saashqcloud.com/).
+
+
+### Containerized Installation
+
+A Saashq/ERPNexus instance can be setup and replicated easily using [Docker](https://docker.com). The officially supported Docker installation can be used to setup either of both Development and Production environments.
+
+To setup either of the environments, you will need to clone the official docker repository:
+
+```sh
+$ git clone https://github.com/saashqdev/saashq_docker.git
+$ cd saashq_docker
+```
+
+A quick setup guide for both the environments can be found below. For more details, check out the [Saashq/ERPNexus Docker Repository](https://github.com/saashqdev/saashq_docker).
+
+### Easy Install Script
+
+The Easy Install script should get you going with a Saashq/ERPNexus setup with minimal manual intervention and effort.
+
+This script uses Docker with the [Saashq/ERPNexus Docker Repository](https://github.com/saashqdev/saashq_docker) and can be used for both Development setup and Production setup.
+
+#### Setup
+
+Download the Easy Install script and execute it:
+
+```sh
+$ wget https://raw.githubusercontent.com/saashq/wrench/develop/easy-install.py
+$ python3 easy-install.py --prod --email your@email.tld
+```
+
+This script will install docker on your system and will fetch the required containers, setup wrench and a default ERPNexus instance.
+
+The script will generate MySQL root password and an Administrator password for the Saashq/ERPNexus instance, which will then be saved under `$HOME/passwords.txt` of the user used to setup the instance.
+It will also generate a new compose file under `$HOME/<project-name>-compose.yml`.
+
+When the setup is complete, you will be able to access the system at `http://<your-server-ip>`, wherein you can use the Administrator password to login.
+
+#### Arguments
+
+Here are the arguments for the easy-install script
+
+```txt
+usage: easy-install.py [-h] [-p] [-d] [-s SITENAME] [-n PROJECT] [--email EMAIL]
+
+Install Saashq with Docker
+
+options:
+  -h, --help            		show this help message and exit
+  -p, --prod            		Setup Production System
+  -d, --dev             		Setup Development System
+  -s SITENAME, --sitename SITENAME      The Site Name for your production site
+  -n PROJECT, --project PROJECT         Project Name
+  --email EMAIL         		Add email for the SSL.
+```
+
+#### Troubleshooting
+
+In case the setup fails, the log file is saved under `$HOME/easy-install.log`. You may then
+
+- Create an Issue in this repository with the log file attached.
 
 ### Manual Installation
 
-Some might want to manually setup a wrench instance locally for development. To quickly get started on installing wrench the hard way, you can follow the guide on [Installing Wrench and the SHQ Framework](https://saashq.org/docs/user/en/installation).
+Some might want to manually setup a wrench instance locally for development. To quickly get started on installing wrench the hard way, you can follow the guide on [Installing Wrench and the Saashq Framework](https://saashq.io/docs/user/en/installation).
 
 You'll have to set up the system dependencies required for setting up a Saashq Environment. Checkout [docs/installation](https://github.com/saashqdev/wrench/blob/develop/docs/installation.md) for more information on this. If you've already set up, install wrench via pip:
 
@@ -63,31 +154,6 @@ For more in-depth information on commands and their usage, follow [Commands and 
 
 ## Custom Wrench Commands
 
-If you wish to extend the capabilities of wrench with your own custom Saashq Application, you may follow [Adding Custom Wrench Commands](https://github.com/saashqdev/wrench/blob/develop/docs/wrench_custom_cmd.md).
-
-
-## Guides
-
-- [Configuring HTTPS](https://saashq.org/docs/user/en/wrench/guides/configuring-https.html)
-- [Using Let's Encrypt to setup HTTPS](https://saashq.org/docs/user/en/wrench/guides/lets-encrypt-ssl-setup.html)
-- [Diagnosing the Scheduler](https://saashq.org/docs/user/en/wrench/guides/diagnosing-the-scheduler.html)
-- [Change Hostname](https://saashq.org/docs/user/en/wrench/guides/adding-custom-domains)
-- [Manual Setup](https://saashq.org/docs/user/en/wrench/guides/manual-setup.html)
-- [Setup Production](https://saashq.org/docs/user/en/wrench/guides/setup-production.html)
-- [Setup Multitenancy](https://saashq.org/docs/user/en/wrench/guides/setup-multitenancy.html)
-- [Stopping Production](https://github.com/saashqdev/wrench/wiki/Stopping-Production-and-starting-Development)
-
-For an exhaustive list of guides, check out [Wrench Guides](https://saashq.org/docs/user/en/wrench/guides).
-
-
-## Resources
-
-- [Wrench Commands Cheat Sheet](https://saashq.org/docs/user/en/wrench/resources/wrench-commands-cheatsheet.html)
-- [Background Services](https://saashq.org/docs/user/en/wrench/resources/background-services.html)
-- [Wrench Procfile](https://saashq.org/docs/user/en/wrench/resources/wrench-procfile.html)
-
-For an exhaustive list of resources, check out [Wrench Resources](https://saashq.org/docs/user/en/wrench/resources).
-
 
 ## Development
 
@@ -119,26 +185,6 @@ $ pip3 install -U saashq-wrench
 
 To confirm the switch, check the output of `wrench src`. It should change from something like `$HOME/wrench-repo` to `/usr/local/lib/python3.6/dist-packages` and stop the editable install warnings from getting triggered at every command.
 
-
-## Releases
-
-Wrench's version information can be accessed via `wrench.VERSION` in the package's __init__.py file. Eversince the v5.0 release, we've started publishing releases on GitHub, and PyPI.
-
-GitHub: https://github.com/saashqdev/wrench/releases
-
-PyPI: https://pypi.org/project/saashq-wrench
-
-
-From v5.3.0, we partially automated the release process using [@semantic-release](.github/workflows/release.yml). Under this new pipeline, we do the following steps to make a release:
-
-1. Merge `develop` into the `staging` branch
-1. Merge `staging` into the latest stable branch, which is `v5.x` at this point.
-
-This triggers a GitHub Action job that generates a bump commit, drafts and generates a GitHub release, builds a Python package and publishes it to PyPI.
-
-The intermediate `staging` branch exists to mediate the `wrench.VERSION` conflict that would arise while merging `develop` and stable. On develop, the version has to be manually updated (for major release changes). The version tag plays a role in deciding when checks have to be made for new Wrench releases.
-
-> Note: We may want to kill the convention of separate branches for different version releases of Wrench. We don't need to maintain this the way we do for Saashq & ERPNexus. A single branch named `stable` would sustain.
 
 ## License
 

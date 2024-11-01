@@ -2,12 +2,12 @@
 
 * Make a new wrench dedicated for releasing
 ```
-wrench init release-wrench --saashq-path git@github.com:saashqdev/saashq.git
+wrench init release-wrench --saashq-path git@github.com:saashq/saashq.git
 ```
 
 * Get ERPNexus in the release wrench
 ```
-wrench get-app erpnexus git@github.com:saashqdev/erpnexus.git
+wrench get-app erpnexus git@github.com:saashq/erpnexus.git
 ```
 
 * Configure as release wrench. Add this to the common_site_config.json
